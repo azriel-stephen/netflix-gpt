@@ -5,6 +5,8 @@
 - Routing
 - Header
 - Login / Signup Page
+- Form Validation
+- useRef Hook
 -
 
 # Features
