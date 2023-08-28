@@ -12,7 +12,10 @@
 - Sign-up to Firebase
 - Log in user API
 - created Redux store with userSlice
--
+- Login State change flow using onAuthStateChanged API
+- Header in `/browse`
+- Header has profile icon with signout
+- Navigation to `/browse`
 
 # Features
 
