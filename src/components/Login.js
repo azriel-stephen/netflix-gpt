@@ -1,6 +1,11 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { checkValid } from "../utils/validate";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -14,16 +19,53 @@ const Login = () => {
   };
   const handleClick = () => {
     // validation of the form data
-    const message = checkValid(
+    const errorMessage = checkValid(
       email.current.value,
       password.current.value,
       name.current ? name.current.value : null
     );
-    setErrorMessage(message);
-    console.log(password.current.value);
-    console.log(name.current.value);
+    setErrorMessage(errorMessage);
+    if (errorMessage) return;
+    // Sign in / sign up logic continues from here on
+    if (!isSignInForm) {
+      // Sign up logic
 
-    // Sign in / sign up
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode.slice(5).split("-").join(" "));
+          // ..
+        });
+    } else {
+      //Sign in logic
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode.slice(5).split("-").join(" "));
+        });
+    }
   };
   return (
     <div>
@@ -72,7 +114,10 @@ const Login = () => {
         >
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
-        <p className="text-gray-500 cursor-pointer" onClick={toggleSignIn}>
+        <p
+          className="text-gray-500 hover:text-gray-400 cursor-pointer"
+          onClick={toggleSignIn}
+        >
           {isSignInForm
             ? "New to Netflix? Sign Up now!"
             : "Already signed up? Login now!"}

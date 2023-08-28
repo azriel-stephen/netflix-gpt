@@ -7,6 +7,11 @@
 - Login / Signup Page
 - Form Validation
 - useRef Hook
+- Firebase setup
+- Deployment of app to prod
+- Sign-up to Firebase
+- Log in user API
+- created Redux store with userSlice
 -
 
 # Features
@@ -23,3 +28,10 @@
   - Netflix GPT
     - Search bar
     - Movie suggestions (from the list of movies)
+
+# Ref
+
+To host your site with Firebase Hosting, you need the Firebase CLI (a command line tool).
+
+Run the following npm command to install the CLI or update to the latest CLI version.
+`npm install -g firebase-tools`
