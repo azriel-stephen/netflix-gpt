@@ -15,7 +15,12 @@
 - Login State change flow using onAuthStateChanged API
 - Header in `/browse`
 - Header has profile icon with signout
-- Navigation to `/browse`
+- Navigation to `/browse` -> `useNavigate`
+- profile picture (hardcoded for now)
+- conditional rendering if logged in
+- `useSelector`, `useDispatch`
+- update profile while creation to add displayName and photoURL -> update redux-store
+-
 
 # Features
 
