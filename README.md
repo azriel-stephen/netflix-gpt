@@ -20,6 +20,7 @@
 - conditional rendering if logged in
 - `useSelector`, `useDispatch`
 - update profile while creation to add displayName and photoURL -> update redux-store
+- bug fixes: removed redundant navigation, restricted routes for logged in users and guests
 -
 
 # Features
