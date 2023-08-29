@@ -21,7 +21,8 @@
 - `useSelector`, `useDispatch`
 - update profile while creation to add displayName and photoURL -> update redux-store
 - bug fixes: removed redundant navigation, restricted routes for logged in users and guests
--
+- unsubscribed to the onAuthStateChanged callback
+- TODO: add hardcoded values (e.g. src) to the contants file
 
 # Features
 
