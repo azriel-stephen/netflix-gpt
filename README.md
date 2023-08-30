@@ -22,7 +22,17 @@
 - update profile while creation to add displayName and photoURL -> update redux-store
 - bug fixes: removed redundant navigation, restricted routes for logged in users and guests
 - unsubscribed to the onAuthStateChanged callback
-- TODO: add hardcoded values (e.g. src) to the contants file
+- TODO (DONE): add hardcoded values (e.g. src) to the contants file
+- Register to TMDB, created app, API and AccessToken
+- Fetch Now Playing movies via TMDB API
+- Custom hook for retrieving now playing movies
+- Build Primary (Main Movie detail + trailer in background) and Secondary Containers for `/browse` page
+- Main Movie Background Video (initial version)
+- Custom hook for Retrieving trailer of banner movie
+- Movie Slice
+- TODO (IMPORTANT): Backdrop image when background image is
+  1. Paused
+  2. Finished
 
 # Features
 
@@ -34,7 +44,7 @@
   - Main Movie Hero Section
     - Running Trailer in the background
     - Title and Description
-    - Play button and Add to watch list button
+    - Play button and Add to watch list (TODO) button
   - Netflix GPT
     - Search bar
     - Movie suggestions (from the list of movies)

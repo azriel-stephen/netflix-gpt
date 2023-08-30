@@ -9,6 +9,10 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import {
+  NETFLIX_BANNER_IMG_URL,
+  PROFILE_PICTURE_URL,
+} from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -44,7 +48,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/85186840?v=4",
+            photoURL: PROFILE_PICTURE_URL,
           })
             .then(() => {
               // Profile updated!
@@ -64,7 +68,6 @@ const Login = () => {
               // ...
               setErrorMessage(error.message);
             });
-          // console.log(user);
           // ...
         })
         .catch((error) => {
@@ -96,13 +99,9 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute ">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/00103100-5b45-4d4f-af32-342649f1bda5/64774cd8-5c3a-4823-a0bb-1610d6971bd4/IN-en-20230821-popsignuptwoweeks-perspective_alpha_website_large.jpg"
-          alt="banner"
-          className=""
-        />
+        <img src={NETFLIX_BANNER_IMG_URL} alt="banner" className="" />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 from-5 to-transparent"></div>
+      <div className="absolute"></div>
       <form
         onSubmit={(e) => e.preventDefault()}
         className="flex flex-col items-center w-1/3 absolute rounded-lg bg-black/80 p-12 my-32 mx-auto right-0 left-0 text-white hover:bg-black/[0.85]"
