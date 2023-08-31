@@ -20,8 +20,8 @@ export const useTrailerVideo = (movieId) => {
       const trailer = filterTrailer.length
         ? filterTrailer[0]
         : result.results[0];
+
       dispatch(addTrailerVideo(trailer));
-      console.log(trailer);
     } catch (e) {
       console.error(e);
     }

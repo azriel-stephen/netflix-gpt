@@ -46,16 +46,20 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="flex justify-between absolute px-10 w-screen bg-gradient-to-b from-black/70 from-5 to-transparent py-3 z-10">
+    <div className="flex justify-between absolute  w-full  bg-gradient-to-b from-black via-black/70  z-10">
       <img className="w-56" src={NETFLIX_LOGO_URL} alt="logo" />
       {user && (
-        <div className="flex items-center">
-          <img className="w-12 rounded-lg" src={user?.photoURL} alt="profile" />
+        <div className=" flex items-center  justify-between px-6 mt-12">
+          <img
+            className="w-16  rounded-lg"
+            src={user?.photoURL}
+            alt="profile"
+          />
           <button
-            className="text-white/70 hover:text-slate-400"
+            className="w-full  text-white/70 p-1 leading-none hover:text-slate-400"
             onClick={handleSignOut}
           >
-            (sign out)
+            sign out
           </button>
         </div>
       )}
