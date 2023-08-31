@@ -30,9 +30,19 @@
 - Main Movie Background Video (initial version)
 - Custom hook for Retrieving trailer of banner movie
 - Movie Slice
-- TODO (IMPORTANT): Backdrop image when background image is
+- **TODO (IMPORTANT)**: Backdrop image when background image is
   1. Paused
   2. Finished
+- Movie List component
+  - Movie Card components
+- Popular Movies, Top Rated Movies and Upcoming Movies (stored in Redux store)
+- Poster images
+- Bug Fix: screen size was messed up
+- Secondary container with multiple lists of movies
+- Custom Hooks for each category of movie list
+- Tailwind Styling
+- **TODO**: Responsive Layout
+- **TODO**: on hover show movie card details
 
 # Features
 
